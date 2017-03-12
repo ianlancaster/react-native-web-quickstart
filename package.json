@@ -65,7 +65,8 @@
     "redux-thunk": "^2.2.0",
     "snazzy": "^5.0.0",
     "standard": "8.6.0",
-    "standard-flow": "^1.0.0"
+    "standard-flow": "^1.0.0",
+    "webpack": "^2.2.1"
   },
   "ava": {
     "files": [

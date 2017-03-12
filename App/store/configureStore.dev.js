@@ -10,7 +10,8 @@ import createLogger from 'redux-logger';
 // backwards in time using magic
 const createDevStoreWithMiddleware = compose(
   applyMiddleware(thunk),
-  applyMiddleware(createLogger())
+  applyMiddleware(createLogger()),
+  DevTools.instrument()
 )(createStore);
 
 export default function configureStore() {
