@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, { Component } from 'react'
+import { View, Text, StyleSheet } from 'react-native'
 
 export default class HelloWorld extends Component {
-  render() {
+  render () {
     const style = StyleSheet.create({
       helloWorld: {
         color: 'black',
-        textAlign: 'center',
+        textAlign: 'center'
       }
-    });
+    })
 
     return (
       <View>
@@ -26,6 +26,6 @@ export default class HelloWorld extends Component {
         <Text style={style.helloWorld}>Hello World</Text>
         <Text style={style.helloWorld}>Hello World</Text>
       </View>
-    );
+    )
   }
 }

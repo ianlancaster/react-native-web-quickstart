@@ -8,7 +8,6 @@ import DrawerButton from '../Components/DrawerButton'
 import { Actions as NavigationActions } from 'react-native-router-flux'
 
 class DrawerContent extends Component {
-
   componentDidMount () {
     BackAndroid.addEventListener('hardwareBackPress', () => {
       if (this.context.drawer.props.open) {
@@ -60,7 +59,6 @@ class DrawerContent extends Component {
       </ScrollView>
     )
   }
-
 }
 
 DrawerContent.contextTypes = {

@@ -1,7 +1,7 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import thunk        from 'redux-thunk';
-import StockApp     from '../Modules';
-import createLogger from 'redux-logger';
+import { createStore, applyMiddleware, compose } from 'redux'
+import thunk from 'redux-thunk'
+import StockApp from '../Modules'
+import createLogger from 'redux-logger'
 
 // create a store that has redux-thunk middleware, and dev tooling enabled.
 // the logger middleware logs the previous state, the action, and the next
@@ -10,20 +10,19 @@ import createLogger from 'redux-logger';
 // backwards in time using magic
 const createDevStoreWithMiddleware = compose(
   applyMiddleware(thunk),
-  applyMiddleware(createLogger()),
-  DevTools.instrument()
-)(createStore);
+  applyMiddleware(createLogger())
+)(createStore)
 
-export default function configureStore() {
-  const store = createDevStoreWithMiddleware(StockApp);
+export default function configureStore () {
+  const store = createDevStoreWithMiddleware(StockApp)
 
   // enable webpack hot module replacement for Modules
   if (module.hot) {
     module.hot.accept('../Modules', () => {
-      const nextRootReducer = require('../Modules');
-      store.replaceReducer(nextRootReducer);
-    });
+      const nextRootReducer = require('../Modules')
+      store.replaceReducer(nextRootReducer)
+    })
   }
 
-  return store;
+  return store
 }

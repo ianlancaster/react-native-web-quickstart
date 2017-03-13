@@ -35,9 +35,9 @@ const initialState = {
   color: 'red',
   data: {
     loading: false,
-    objects: [],
-  },
-};
+    objects: []
+  }
+}
 
 // ------------------------------------
 // Store Injection
