@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import StockApp from '../Modules'
+import reducers from './reducers'
 
 // create a store that has redux-thunk middleware enabled
 const createStoreWithMiddleware = applyMiddleware(
@@ -8,5 +8,5 @@ const createStoreWithMiddleware = applyMiddleware(
 )(createStore)
 
 export default function configureStore () {
-  return createStoreWithMiddleware(StockApp)
+  return createStoreWithMiddleware(reducers)
 }

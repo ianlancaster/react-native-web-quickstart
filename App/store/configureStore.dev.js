@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
-import StockApp from '../Modules'
+import reducers from './reducers'
 import createLogger from 'redux-logger'
 
 // create a store that has redux-thunk middleware, and dev tooling enabled.
@@ -14,12 +14,12 @@ const createDevStoreWithMiddleware = compose(
 )(createStore)
 
 export default function configureStore () {
-  const store = createDevStoreWithMiddleware(StockApp)
+  const store = createDevStoreWithMiddleware(reducers)
 
-  // enable webpack hot module replacement for Modules
+  // enable webpack hot module replacement for reducers
   if (module.hot) {
-    module.hot.accept('../Modules', () => {
-      const nextRootReducer = require('../Modules')
+    module.hot.accept('./reducers', () => {
+      const nextRootReducer = require('./reducers')
       store.replaceReducer(nextRootReducer)
     })
   }

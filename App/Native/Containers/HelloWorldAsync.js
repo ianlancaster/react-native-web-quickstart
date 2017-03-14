@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { connect } from 'react-redux'
-import { toggleColor } from '../../Modules'
+import { toggleColor } from '../../Modules/helloWorldAsync'
 
 class HelloWorldAsync extends Component {
   render () {
@@ -36,7 +36,7 @@ const mapDispatchToProps = {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  color: state.color
+  color: state.helloWorldAsync.color
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(HelloWorldAsync)
