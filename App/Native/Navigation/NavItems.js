@@ -33,7 +33,7 @@ export default {
         <Icon name='bars'
           size={Metrics.icons.medium}
           color={Colors.snow}
-          style={styles.navButtonLeft}
+          style={styles.hamburgerButton}
         />
       </TouchableOpacity>
     )

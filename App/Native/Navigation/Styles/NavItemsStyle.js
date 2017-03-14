@@ -11,8 +11,13 @@ const navButton = {
 export default StyleSheet.create({
   backButton: {
     ...navButton,
-    marginTop: Metrics.baseMargin,
-    marginLeft: Metrics.baseMargin
+    marginTop: -12,
+    marginLeft: 0
+  },
+  hamburgerButton: {
+    ...navButton,
+    marginTop: -4,
+    marginRight: 0
   },
   searchButton: {
     ...navButton,

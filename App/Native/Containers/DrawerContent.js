@@ -27,11 +27,17 @@ class DrawerContent extends Component {
     NavigationActions.helloWorld()
   }
 
+  routeHelloWorldAsync = () => {
+    this.toggleDrawer()
+    NavigationActions.HelloWorldAsync()
+  }
+
   render () {
     return (
       <ScrollView style={styles.container}>
         <Image source={Images.logo} style={styles.logo} />
         <DrawerButton text='helloWorld' onPress={this.routeHelloWorld} />
+        <DrawerButton text='HelloWorldAsync' onPress={this.routeHelloWorldAsync} />
       </ScrollView>
     )
   }
