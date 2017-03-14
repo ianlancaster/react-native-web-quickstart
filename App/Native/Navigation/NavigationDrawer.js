@@ -40,7 +40,8 @@ class NavigationDrawer extends Component {
 }
 
 NavigationDrawer.propTypes = {
-  navigationState: PropTypes.object
+  navigationState: PropTypes.object.isRequired,
+  onNavigate: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
