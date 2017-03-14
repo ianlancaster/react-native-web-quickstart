@@ -1,6 +1,3 @@
-// Note: fetch results in a well documented 'Cannot find variable: self' error. Will need to fix.
-// import fetch from 'isomorphic-fetch'
-
 // ------------------------------------
 // Injection Setup
 // ------------------------------------
@@ -21,9 +18,13 @@ const handleAction = (ACTION_TYPE, stateChanges) => {
 // Actions & Hadlers (Reducers)
 // ------------------------------------
 
-export const toggleColor = () => ({ type: 'TOGGLE_COLOR' })
+export const asyncToggleColor = () =>
+  dispatch =>
+    setTimeout(() =>
+      dispatch({ type: 'ASYNC_TOGGLE_COLOR' })
+    , 1500)
 
-handleAction('TOGGLE_COLOR', (state, action) => ({
+handleAction('ASYNC_TOGGLE_COLOR', (state, action) => ({
   color: state.color === 'red' ? 'blue' : 'red'
 }))
 
@@ -32,18 +33,14 @@ handleAction('TOGGLE_COLOR', (state, action) => ({
 // ------------------------------------
 
 const initialState = {
-  color: 'red',
-  data: {
-    loading: false,
-    objects: []
-  }
+  color: 'red'
 }
 
 // ------------------------------------
 // Store Injection
 // ------------------------------------
 
-export default function stockAppReducer (state = initialState, action) {
+export default function helloWorldAsyncReducer (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]
   return handler ? handler(state, action) : state
 }
