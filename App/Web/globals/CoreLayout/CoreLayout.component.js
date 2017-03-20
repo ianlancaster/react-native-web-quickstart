@@ -6,12 +6,14 @@ import NavigationDrawer from 'Globals/NavigationDrawer'
 
 class CoreLayout extends Component {
   render () {
-    const { children } = this.props
+    const { children, drawerOpen } = this.props
+    const toggleStyle = drawerOpen ? { marginLeft: '-80%' } : { marginLeft: 0 }
+
     return (
       <div id='coreLayout' className={classes.coreLayout}>
         <div
           className={classes.applicaion}
-          style={{ marginLeft: 0 }}>
+          style={toggleStyle}>
           <Header />
           <main className={classes.main}>
             {children}
@@ -24,7 +26,8 @@ class CoreLayout extends Component {
 }
 
 CoreLayout.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
+  drawerOpen: PropTypes.bool
 }
 
 module.exports = CoreLayout
