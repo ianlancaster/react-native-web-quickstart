@@ -15,7 +15,7 @@ const browserHistory = useRouterHistory(createBrowserHistory)({
 })
 
 // Create redux store and sync with react-router-redux. We have installed the
-// react-router-redux reducer under the key "router" in src/routes/index.js,
+// react-router-redux reducer under the key "router" in src/Routes/index.js,
 // so we need to provide a custom `selectLocationState` to inform
 // react-router-redux of its location.
 const store = createStore(window.__INITIAL_STATE__, browserHistory)
@@ -24,7 +24,7 @@ const history = syncHistoryWithStore(browserHistory, store, {
 })
 
 let render = (key = null) => {
-  const routes = require('./routes/index').default(store)
+  const routes = require('./Routes/index').default(store)
   const App = (
     <Provider store={store}>
       <div style={{
@@ -57,7 +57,7 @@ if (__DEV__ && module.hot) {
       renderError(error)
     }
   }
-  module.hot.accept(['./routes/index'], () => render())
+  module.hot.accept(['./Routes/index'], () => render())
 }
 
 // Use Redux DevTools chrome extension
