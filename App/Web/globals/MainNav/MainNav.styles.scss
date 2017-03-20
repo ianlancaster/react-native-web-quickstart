@@ -1,0 +1,18 @@
+@import "../../themes/base";
+
+.mainNav {
+  background-color: $darkBlue;
+  height: 50px;
+
+  ul {
+    display: flex;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  li {
+    text-align: center;
+  }
+}

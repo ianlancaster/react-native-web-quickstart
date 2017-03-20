@@ -15,11 +15,11 @@ const config = {
   // Project Structure
   // ----------------------------------
   path_base  : path.resolve(__dirname, '..'),
-  dir_client : 'src',
+  dir_client : '../App/Web',
   dir_dist   : 'dist',
   dir_public : 'public',
   dir_server : 'server',
-  dir_test   : 'src',
+  dir_test   : '../App/Web',
 
   // ----------------------------------
   // Server Configuration
@@ -90,7 +90,7 @@ config.globals = {
 // ------------------------------------
 // Validate Vendor Dependencies
 // ------------------------------------
-const pkg = require('../package.json')
+const pkg = require('../../package.json')
 
 config.compiler_vendors = config.compiler_vendors
   .filter((dep) => {
