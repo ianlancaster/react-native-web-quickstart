@@ -2,7 +2,7 @@
 
 import React, { Component, PropTypes } from 'react'
 import { Text, TouchableOpacity } from 'react-native'
-import styles from './Styles/DrawerButtonStyles'
+import styles from './DrawerButton.styles'
 
 class DrawerButton extends Component {
   render () {

@@ -2,13 +2,13 @@
 
 import React, { Component } from 'react'
 import { Scene, Router } from 'react-native-router-flux'
-import Styles from './Styles/NavigationContainerStyle'
-import NavigationDrawer from './NavigationDrawer'
-import NavItems from './NavItems'
+import Styles from './NavigationRouter.styles'
+import NavigationDrawer from '../NavigationDrawer'
+import NavItems from '../NavItems'
 
 // screens identified by the router
-import HelloWorld from '../Routes/HelloWorld'
-import HelloWorldAsync from '../Routes/HelloWorldAsync'
+import HelloWorld from '../../Routes/HelloWorld'
+import HelloWorldAsync from '../../Routes/HelloWorldAsync'
 
 /* **************************
 * Documentation: https://github.com/aksonov/react-native-router-flux

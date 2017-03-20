@@ -3,9 +3,9 @@
 import React, { PropTypes, Component } from 'react'
 import Drawer from 'react-native-drawer'
 import { DefaultRenderer, Actions as NavigationActions } from 'react-native-router-flux'
-import DrawerContent from '../Routes/DrawerContent'
+import DrawerContent from '../DrawerContent'
 import { connect } from 'react-redux'
-import Styles from './Styles/NavigationDrawerStyle'
+import Styles from './NavigationDrawer.styles'
 
 /* *******************
 * Documentation: https://github.com/root-two/react-native-drawer
