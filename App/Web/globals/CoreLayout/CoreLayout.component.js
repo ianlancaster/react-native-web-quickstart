@@ -9,7 +9,9 @@ class CoreLayout extends Component {
     const { children } = this.props
     return (
       <div id='coreLayout' className={classes.coreLayout}>
-        <div className={classes.applicaion}>
+        <div
+          className={classes.applicaion}
+          style={{ marginLeft: 0 }}>
           <Header />
           <main className={classes.main}>
             {children}

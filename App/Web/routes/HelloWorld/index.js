@@ -5,10 +5,10 @@ export default (store) => ({
   getComponent (nextState, next) {
     require.ensure([
       './helloWorld.container',
-      '../../../Modules/helloWorld'
+      '../../../Modules/HelloWorld.modules'
     ], (require) => {
       const helloWorld = require('./helloWorld.container').default
-      const helloWorldReducer = require('../../../Modules/helloWorld').default
+      const helloWorldReducer = require('../../../Modules/HelloWorld.modules').default
 
       injectReducer(store, {
         key: 'helloWorld',

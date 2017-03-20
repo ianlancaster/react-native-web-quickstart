@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { toggleColor } from '../../../Modules/helloWorld'
+import { toggleColor } from '../../../Modules/HelloWorld.modules'
 import HelloWorld from './HelloWorld.component'
 
 const mapDispatchToProps = {

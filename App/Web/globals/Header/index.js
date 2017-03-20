@@ -1,3 +1,3 @@
-import Header from './Header.component.js'
+import Header from './Header.container.js'
 
 export default Header

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { asyncToggleColor } from '../../../Modules/helloWorldAsync'
+import { asyncToggleColor } from '../../../Modules/HelloWorldAsync.modules'
 import HelloWorldAsync from './HelloWorldAsync.component'
 
 const mapDispatchToProps = {

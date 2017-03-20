@@ -9,7 +9,9 @@ class NavigationDrawer extends Component {
   render () {
     const { exampleProp1 } = this.props
     return (
-      <div className={classes.drawer}>
+      <div
+        className={classes.drawer}
+        style={{ width: 0 }}>
         <h2>Navigation Drawer {exampleProp1}</h2>
       </div>
     )

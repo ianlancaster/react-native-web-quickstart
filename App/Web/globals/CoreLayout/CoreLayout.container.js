@@ -1,13 +1,8 @@
 import { connect } from 'react-redux'
-import { fetchAdditionalContent } from './CoreLayout.modules.js'
 import CoreLayout from './CoreLayout.component.js'
 
-const mapDispatchToProps = {
-  fetchAdditionalContent
-}
-
 const mapStateToProps = (state, ownProps) => ({
-  billsFetching: state.bills.fetching
+  exampleProp: state.CoreLayout.exampleProp
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(CoreLayout)
+export default connect(mapStateToProps, null)(CoreLayout)
