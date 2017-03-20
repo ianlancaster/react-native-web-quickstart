@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import { routerReducer as router } from 'react-router-redux'
-import coreLayout from 'globals/CoreLayout/CoreLayout.modules.js'
+import coreLayout from 'Globals/CoreLayout/CoreLayout.modules.js'
 
 export const reducers = (asyncReducers) => {
   return combineReducers({

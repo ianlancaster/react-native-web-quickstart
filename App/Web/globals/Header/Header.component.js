@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import classes from './Header.styles.scss'
-import HamburgerMenu from 'globals/HamburgerMenu'
+import HamburgerMenu from 'Globals/HamburgerMenu'
 
 class Header extends Component {
   render () {

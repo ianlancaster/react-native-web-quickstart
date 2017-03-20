@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
-import Header from 'globals/Header'
+import Header from 'Globals/Header'
 import classes from './CoreLayout.styles.scss'
-// import MainNav from 'globals/MainNav'
-import NavigationDrawer from 'globals/NavigationDrawer'
+// import MainNav from 'Globals/MainNav'
+import NavigationDrawer from 'Globals/NavigationDrawer'
 
 class CoreLayout extends Component {
   render () {

@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './MainNav.styles.scss'
-import NavIconLink from 'globals/NavIconLink'
+import NavIconLink from 'Globals/NavIconLink'
 
 import billsIcon from './assets/bills-icon.png'
 import congressIcon from './assets/congress-icon.svg'

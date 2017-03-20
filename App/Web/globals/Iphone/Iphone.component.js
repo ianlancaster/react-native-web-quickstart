@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import classes from './Iphone.styles.scss'
-import CoreLayout from 'globals/CoreLayout'
+import CoreLayout from 'Globals/CoreLayout'
 
 const Iphone = ({ children }) => {
   return (

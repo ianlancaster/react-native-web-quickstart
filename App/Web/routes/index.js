@@ -1,4 +1,4 @@
-import Iphone from 'globals/Iphone'
+import Iphone from 'Globals/Iphone'
 
 export const createRoutes = (store) => {
   const routes = {
