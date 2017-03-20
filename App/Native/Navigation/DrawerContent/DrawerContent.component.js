@@ -3,7 +3,7 @@
 import React, { Component } from 'react'
 import { ScrollView, Image, BackAndroid } from 'react-native'
 import styles from './DrawerContent.styles'
-import { Images } from '../../Themes'
+import { images } from '../../Themes'
 import DrawerButton from '../../Globals/DrawerButton'
 import { Actions as NavigationActions } from 'react-native-router-flux'
 
@@ -35,7 +35,7 @@ class DrawerContent extends Component {
   render () {
     return (
       <ScrollView style={styles.container}>
-        <Image source={Images.logo} style={styles.logo} />
+        <Image source={images.logo} style={styles.logo} />
         <DrawerButton text='helloWorld' onPress={this.routeHelloWorld} />
         <DrawerButton text='HelloWorldAsync' onPress={this.routeHelloWorldAsync} />
       </ScrollView>

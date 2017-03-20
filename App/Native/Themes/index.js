@@ -1,9 +1,9 @@
 // @flow
 
-import Colors from './Colors'
-import Fonts from './Fonts'
-import Metrics from './Metrics'
-import Images from './Images'
-import ApplicationStyles from './ApplicationStyles'
+import colors from './Colors'
+import fonts from './Fonts'
+import metrics from './Metrics'
+import images from './Images'
+import applicationStyles from './ApplicationStyles'
 
-export { Colors, Fonts, Images, Metrics, ApplicationStyles }
+export { colors, fonts, images, metrics, applicationStyles }

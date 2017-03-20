@@ -1,10 +1,10 @@
 // @flow
 
 import { StyleSheet } from 'react-native'
-import { Metrics, Colors } from '../../Themes/'
+import { metrics, colors } from '../../Themes/'
 
 const navButton = {
-  backgroundColor: Colors.transparent,
+  backgroundColor: colors.transparent,
   justifyContent: 'center'
 }
 
@@ -21,8 +21,8 @@ export default StyleSheet.create({
   },
   searchButton: {
     ...navButton,
-    marginTop: Metrics.section,
-    marginRight: Metrics.baseMargin,
+    marginTop: metrics.section,
+    marginRight: metrics.baseMargin,
     alignItems: 'center'
   }
 })

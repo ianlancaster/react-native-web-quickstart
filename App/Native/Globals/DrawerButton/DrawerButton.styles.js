@@ -1,11 +1,11 @@
 // @flow
 
-import { Metrics, Colors, Fonts } from '../../Themes'
+import { metrics, colors, fonts } from '../../Themes'
 
 export default {
   text: {
-    ...Fonts.style.h5,
-    color: Colors.snow,
-    marginVertical: Metrics.baseMargin
+    ...fonts.style.h5,
+    color: colors.snow,
+    marginVertical: metrics.baseMargin
   }
 }

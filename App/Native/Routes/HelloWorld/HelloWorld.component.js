@@ -11,7 +11,7 @@ export default class HelloWorld extends Component {
         <Text
           onPress={toggleColor}
           style={[classes.helloWorld, { color }]}>
-          Hello World
+          Hello World!
         </Text>
       </View>
     )

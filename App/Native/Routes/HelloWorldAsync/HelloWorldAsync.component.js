@@ -8,7 +8,11 @@ export default class HelloWorldAsync extends Component {
 
     return (
       <View style={classes.mainView}>
-        <Text onPress={asyncToggleColor} style={[classes.helloWorld, { color }]}>Hello World</Text>
+        <Text
+          onPress={asyncToggleColor}
+          style={[classes.helloWorld, { color }]}>
+          Hello World!
+        </Text>
       </View>
     )
   }

@@ -30,7 +30,7 @@ class NavigationRouter extends Component {
               initial
               key='helloWorld'
               component={HelloWorld}
-              title='Hello World!'
+              title='Hello World'
               renderRightButton={NavItems.hamburgerButton}
               renderBackButton={() => false}
               direction='leftToRight'
@@ -38,7 +38,7 @@ class NavigationRouter extends Component {
             <Scene
               key='HelloWorldAsync'
               component={HelloWorldAsync}
-              title='Hello World! | Async'
+              title='Hello World | Async'
               renderRightButton={NavItems.hamburgerButton}
               renderBackButton={() => false}
               direction='leftToRight'
