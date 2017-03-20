@@ -1,24 +1,14 @@
 import React, { Component, PropTypes } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text } from 'react-native'
+import { styles } from './HelloWorldAsync.styles'
 
 export default class HelloWorldAsync extends Component {
   render () {
     const { asyncToggleColor, color } = this.props
-    const style = StyleSheet.create({
-      mainView: {
-        flexDirection: 'column',
-        flex: 1,
-        justifyContent: 'center'
-      },
-      helloWorld: {
-        color: color,
-        textAlign: 'center'
-      }
-    })
 
     return (
-      <View style={style.mainView}>
-        <Text onPress={asyncToggleColor} style={style.helloWorld}>Hello World</Text>
+      <View style={styles.mainView}>
+        <Text onPress={asyncToggleColor} style={[styles.helloWorld, { color }]}>Hello World</Text>
       </View>
     )
   }
