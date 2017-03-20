@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-export const styles = StyleSheet.create({
+export const classes = StyleSheet.create({
   mainView: {
     flexDirection: 'column',
     flex: 1,

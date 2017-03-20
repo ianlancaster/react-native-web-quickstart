@@ -1,14 +1,18 @@
 import React, { Component, PropTypes } from 'react'
 import { View, Text } from 'react-native'
-import { styles } from './HelloWorld.styles'
+import { classes } from './HelloWorld.styles'
 
 export default class HelloWorld extends Component {
   render () {
     const { toggleColor, color } = this.props
 
     return (
-      <View style={styles.mainView}>
-        <Text onPress={toggleColor} style={[styles.helloWorld, { color }]}>Hello World</Text>
+      <View style={classes.mainView}>
+        <Text
+          onPress={toggleColor}
+          style={[classes.helloWorld, { color }]}>
+          Hello World
+        </Text>
       </View>
     )
   }
