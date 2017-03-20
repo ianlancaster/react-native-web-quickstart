@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { connect } from 'react-redux'
-import { asyncToggleColor } from '../../Modules/helloWorldAsync'
+import { asyncToggleColor } from '../../../Modules/helloWorldAsync'
 
 class HelloWorldAsync extends Component {
   render () {

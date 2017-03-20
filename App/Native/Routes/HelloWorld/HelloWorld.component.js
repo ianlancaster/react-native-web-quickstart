@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { connect } from 'react-redux'
-import { toggleColor } from '../../Modules/helloWorld'
+import { toggleColor } from '../../../Modules/helloWorld'
 
 class HelloWorld extends Component {
   render () {
