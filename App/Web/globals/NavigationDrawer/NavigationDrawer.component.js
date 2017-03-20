@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import { Link } from 'react-router'
 import classes from './NavigationDrawer.styles.scss'
 
 class NavigationDrawer extends Component {
@@ -7,14 +8,25 @@ class NavigationDrawer extends Component {
     this.state = {}
   }
   render () {
-    const { drawerOpen } = this.props
-    const toggleStyle = drawerOpen ? { width: '80%' } : { width: 0 }
+    const { drawerOpen, toggleDrawer } = this.props
+    const toggleStyle = drawerOpen ? { marginRight: 0 } : { marginRight: '-80%' }
 
     return (
       <div
         className={classes.drawer}
         style={toggleStyle}>
-        <h2>Navigation Drawer</h2>
+
+        <Link
+          to='hello-world'
+          onClick={toggleDrawer}>
+          Hello World
+        </Link>
+
+        <Link
+          to='hello-world-async'
+          onClick={toggleDrawer}>
+          Hello World | Async
+        </Link>
       </div>
     )
   }

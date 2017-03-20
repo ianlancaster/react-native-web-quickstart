@@ -1,8 +1,13 @@
 import { connect } from 'react-redux'
+import { toggleDrawer } from '../../../Modules/NavigationDrawer.modules'
 import NavigationDrawer from './NavigationDrawer.component.js'
 
 const mapStateToProps = (state, ownProps) => ({
   drawerOpen: state.navigationDrawer.drawerOpen
 })
 
-export default connect(mapStateToProps, null)(NavigationDrawer)
+const mapDispatchToProps = {
+  toggleDrawer
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavigationDrawer)

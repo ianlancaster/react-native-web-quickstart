@@ -14,6 +14,8 @@ const handleAction = (ACTION_TYPE, stateChanges) => {
 // Actions & Hadlers (Reducers)
 // ------------------------------------
 
+export const toggleDrawer = () => ({ type: 'TOGGLE_DRAWER' })
+
 handleAction('TOGGLE_DRAWER', (state, action) => ({
   drawerOpen: !state.drawerOpen
 }))
