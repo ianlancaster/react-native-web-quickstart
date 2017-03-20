@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom'
 import createBrowserHistory from 'history/lib/createBrowserHistory'
 import { Router, useRouterHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
-import createStore from './store/createStore'
+import createStore from './Store/createStore'
 import { Provider } from 'react-redux'
-import 'themes/core.scss'
+import 'Themes/core.scss'
 
 const MOUNT_ELEMENT = document.getElementById('root')
 
