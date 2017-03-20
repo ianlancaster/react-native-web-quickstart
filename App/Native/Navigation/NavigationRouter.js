@@ -7,8 +7,8 @@ import NavigationDrawer from './NavigationDrawer'
 import NavItems from './NavItems'
 
 // screens identified by the router
-import HelloWorld from '../Containers/HelloWorld'
-import HelloWorldAsync from '../Containers/HelloWorldAsync'
+import HelloWorld from '../Routes/HelloWorld'
+import HelloWorldAsync from '../Routes/HelloWorldAsync'
 
 /* **************************
 * Documentation: https://github.com/aksonov/react-native-router-flux
