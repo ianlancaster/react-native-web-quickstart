@@ -18,14 +18,23 @@ const handleAction = (ACTION_TYPE, stateChanges) => {
 // Actions & Hadlers (Reducers)
 // ------------------------------------
 
-export const asyncToggleColor = () =>
-  dispatch =>
-    setTimeout(() =>
-      dispatch({ type: 'ASYNC_TOGGLE_COLOR' })
+export const asyncToggleColor = () => {
+  return dispatch => {
+    dispatch({ type : 'START_REQUEST' })
+    return setTimeout(() => {
+      return dispatch({ type: 'ASYNC_TOGGLE_COLOR' })
+    }
     , 1500)
+  }
+}
+
+handleAction('START_REQUEST', (state, action) => ({
+  loading: true
+}))
 
 handleAction('ASYNC_TOGGLE_COLOR', (state, action) => ({
-  color: state.color === 'red' ? 'blue' : 'red'
+  color: state.color === 'red' ? 'blue' : 'red',
+  loading: false
 }))
 
 // ------------------------------------
@@ -33,7 +42,8 @@ handleAction('ASYNC_TOGGLE_COLOR', (state, action) => ({
 // ------------------------------------
 
 const initialState = {
-  color: 'red'
+  color: 'red',
+  loading: false
 }
 
 // ------------------------------------

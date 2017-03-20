@@ -1,9 +1,16 @@
 import React, { Component, PropTypes } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, ActivityIndicator } from 'react-native'
 import { classes } from './HelloWorldAsync.styles'
 
 export default class HelloWorldAsync extends Component {
-  render () {
+  constructor () {
+    super()
+
+    this.renderComponent = this.renderComponent.bind(this)
+    this.renderLoader = this.renderLoader.bind(this)
+  }
+
+  renderComponent () {
     const { asyncToggleColor, color } = this.props
 
     return (
@@ -13,6 +20,20 @@ export default class HelloWorldAsync extends Component {
           style={[classes.helloWorld, { color }]}>
           Hello World!
         </Text>
+      </View>
+    )
+  }
+
+  renderLoader () {
+    return (<ActivityIndicator />)
+  }
+
+  render () {
+    const { props, renderComponent, renderLoader } = this
+
+    return (
+      <View style={classes.mainView}>
+        {props.loading ? renderLoader() : renderComponent()}
       </View>
     )
   }
