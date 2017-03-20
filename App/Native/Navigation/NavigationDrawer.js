@@ -20,8 +20,8 @@ class NavigationDrawer extends Component {
         ref='navigation'
         type='displace'
         open={state.open}
-        onOpen={() => NavigationActions.refresh({key: state.key, open: true})}
-        onClose={() => NavigationActions.refresh({key: state.key, open: false})}
+        onOpen={() => NavigationActions.refresh({ key: state.key, open: true })}
+        onClose={() => NavigationActions.refresh({ key: state.key, open: false })}
         content={<DrawerContent />}
         styles={Styles}
         side='right'
