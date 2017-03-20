@@ -7,19 +7,21 @@ class NavigationDrawer extends Component {
     this.state = {}
   }
   render () {
-    const { exampleProp1 } = this.props
+    const { drawerOpen } = this.props
+    const toggleStyle = drawerOpen ? { width: '80%' } : { width: 0 }
+
     return (
       <div
         className={classes.drawer}
-        style={{ width: 0 }}>
-        <h2>Navigation Drawer {exampleProp1}</h2>
+        style={toggleStyle}>
+        <h2>Navigation Drawer</h2>
       </div>
     )
   }
 }
 
 NavigationDrawer.propTypes = {
-  exampleProp1: PropTypes.number
+  drawerOpen: PropTypes.bool
 }
 
 module.exports = NavigationDrawer
