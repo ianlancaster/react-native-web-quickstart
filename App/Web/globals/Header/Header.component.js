@@ -23,7 +23,7 @@ class Header extends Component {
   }
 
   render () {
-    const { toggleDrawer } = this.props
+    const { toggleDrawer, drawerOpen } = this.props
     const { text } = this.state
 
     return (
@@ -32,6 +32,7 @@ class Header extends Component {
         <p>{text}</p>
         <HamburgerMenu
           onClick={toggleDrawer}
+          open={drawerOpen}
         />
       </nav>
     )
@@ -39,7 +40,8 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  toggleDrawer: PropTypes.func
+  toggleDrawer: PropTypes.func,
+  drawerOpen: PropTypes.bool
 }
 
 module.exports = Header

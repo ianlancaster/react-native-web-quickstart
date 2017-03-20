@@ -2,26 +2,14 @@ import React, { Component, PropTypes } from 'react'
 import classes from './HamburgerMenu.styles.scss'
 
 class HamburgerMenu extends Component {
-  constructor () {
-    super()
-    this.state = {
-      open: false
-    }
-  }
-
-  toggleState () {
-    this.setState({ open: !this.state.open })
-  }
-
   onClick () {
-    this.toggleState()
-
     const { onClick } = this.props
     if (onClick) onClick()
   }
 
   render () {
-    const currentClass = this.state.open ? `${classes.navIcon} ${classes.navIconOpen}` : classes.navIcon
+    const { open } = this.props
+    const currentClass = open ? `${classes.navIcon} ${classes.navIconOpen}` : classes.navIcon
     return (
       <div className={currentClass} onClick={() => this.onClick()}>
         <span />
@@ -36,7 +24,8 @@ class HamburgerMenu extends Component {
 }
 
 HamburgerMenu.propTypes = {
-  onClick: PropTypes.any
+  onClick: PropTypes.any,
+  open: PropTypes.bool
 }
 
 module.exports = HamburgerMenu
