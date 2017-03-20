@@ -33,7 +33,8 @@ class NavigationDrawer extends Component {
 }
 
 NavigationDrawer.propTypes = {
-  drawerOpen: PropTypes.bool
+  drawerOpen: PropTypes.bool,
+  toggleDrawer: PropTypes.func
 }
 
 module.exports = NavigationDrawer
