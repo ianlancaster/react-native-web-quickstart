@@ -10,7 +10,7 @@ import 'Themes/core.scss'
 const MOUNT_ELEMENT = document.getElementById('root')
 
 // Configure history for react-router
-const browserHistory = useRouterHistory(createBrowserHistory)({
+export const browserHistory = useRouterHistory(createBrowserHistory)({
   basename: __BASENAME__
 })
 
