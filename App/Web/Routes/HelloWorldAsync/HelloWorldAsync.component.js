@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import classes from './HelloWorldAsync.styles.scss'
+import Loader from '../../Globals/Loader'
 
 class HelloWorld extends Component {
   constructor () {
@@ -16,6 +17,7 @@ class HelloWorld extends Component {
           style={{ color }}>
           Hello World!
         </h2>
+        <Loader />
       </div>
     )
   }
