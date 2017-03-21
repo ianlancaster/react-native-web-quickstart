@@ -8,11 +8,7 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state, ownProps) => {
   const { color, loading } = state.helloWorldAsync
-
-  return {
-    color,
-    loading
-  }
+  return { color, loading }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HelloWorldAsync)

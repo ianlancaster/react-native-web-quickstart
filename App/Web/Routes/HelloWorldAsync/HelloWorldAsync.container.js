@@ -6,8 +6,9 @@ const mapDispatchToProps = {
   asyncToggleColor
 }
 
-const mapStateToProps = (state, ownProps) => ({
-  color: state.helloWorldAsync.color
-})
+const mapStateToProps = (state, ownProps) => {
+  const { color, loading } = state.helloWorldAsync
+  return { color, loading }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(HelloWorldAsync)

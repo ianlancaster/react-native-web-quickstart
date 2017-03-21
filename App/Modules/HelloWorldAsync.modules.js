@@ -24,7 +24,7 @@ export const asyncToggleColor = () => {
     return setTimeout(() => {
       return dispatch({ type: 'ASYNC_TOGGLE_COLOR' })
     }
-    , 1500)
+    , 2000)
   }
 }
 

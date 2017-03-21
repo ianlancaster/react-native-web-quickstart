@@ -8,16 +8,17 @@ class HelloWorld extends Component {
     this.state = {}
   }
   render () {
-    const { asyncToggleColor, color } = this.props
+    const { asyncToggleColor, color, loading } = this.props
     return (
       <div className={classes.container}>
-        <h2
+        {loading ? <Loader />
+        : <h2
           onClick={asyncToggleColor}
           className={classes.text}
           style={{ color }}>
           Hello World!
         </h2>
-        <Loader />
+        }
       </div>
     )
   }
@@ -25,7 +26,8 @@ class HelloWorld extends Component {
 
 HelloWorld.propTypes = {
   color: PropTypes.string.isRequired,
-  asyncToggleColor: PropTypes.func.isRequired
+  asyncToggleColor: PropTypes.func.isRequired,
+  loading: PropTypes.bool
 }
 
 module.exports = HelloWorld
