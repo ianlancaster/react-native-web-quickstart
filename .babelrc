@@ -1,5 +1,6 @@
 {
-  "presets": [ "react-native", "es2015" ],
+  "presets": [ "react-native" ],
+  "plugins": ["transform-async-to-generator"],
   "env": {
     "development": {
       "sourceMaps": "inline"
