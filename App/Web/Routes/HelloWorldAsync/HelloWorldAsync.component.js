@@ -13,6 +13,7 @@ class HelloWorld extends Component {
       <div className={classes.container}>
         {loading ? <Loader />
         : <h2
+          title='helloWorldAsync'
           onClick={asyncToggleColor}
           className={classes.text}
           style={{ color }}>
