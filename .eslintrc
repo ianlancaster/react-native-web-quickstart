@@ -7,7 +7,8 @@
   "plugins": [
     "babel",
     "react",
-    "promise"
+    "promise",
+    "jest"
   ],
   "env": {
     "browser" : true
@@ -19,7 +20,10 @@
     "__COVERAGE__" : false,
     "__DEBUG__"    : false,
     "__DEBUG_NEW_WINDOW__" : false,
-    "__BASENAME__" : false
+    "__BASENAME__" : false,
+    "describe" : false,
+    "it" : false,
+    "expect" : false
   },
   "rules": {
     "key-spacing"          : 0,
