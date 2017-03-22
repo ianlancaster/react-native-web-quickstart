@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { toggleDrawer } from '../../../Modules/NavigationDrawer.modules'
+import { toggleDrawer } from '../../../Modules/NavigationDrawer/NavigationDrawer.modules'
 import NavigationDrawer from './NavigationDrawer.component.js'
 
 const mapStateToProps = (state, ownProps) => ({

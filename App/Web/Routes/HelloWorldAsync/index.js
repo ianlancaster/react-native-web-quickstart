@@ -5,10 +5,10 @@ export default (store) => ({
   getComponent (nextState, next) {
     require.ensure([
       './helloWorldAsync.container',
-      '../../../Modules/HelloWorldAsync.modules'
+      '../../../Modules/HelloWorldAsync/HelloWorldAsync.modules'
     ], (require) => {
       const helloWorldAsync = require('./helloWorldAsync.container').default
-      const helloWorldAsyncReducer = require('../../../Modules/HelloWorldAsync.modules').default
+      const helloWorldAsyncReducer = require('../../../Modules/HelloWorldAsync/HelloWorldAsync.modules').default
 
       injectReducer(store, {
         key: 'helloWorldAsync',
