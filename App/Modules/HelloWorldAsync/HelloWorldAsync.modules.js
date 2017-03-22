@@ -21,7 +21,8 @@ const handleAction = (ACTION_TYPE, stateChanges) => {
 export const asyncToggleColor = () => {
   return dispatch => {
     dispatch({ type : 'START_REQUEST' })
-    return setTimeout(() => {
+    return setTimeout((callBack) => {
+      callBack && callBack()
       return dispatch({ type: 'ASYNC_TOGGLE_COLOR' })
     }
     , 2000)

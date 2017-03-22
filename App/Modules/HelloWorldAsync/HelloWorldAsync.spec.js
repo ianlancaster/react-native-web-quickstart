@@ -9,7 +9,7 @@
 // })
 
 describe('actions', () => {
-  it('should create an action to add a todo', () => {
-    expect(true).toEqual(true)
+  it('should pass with a single test', () => {
+    expect()
   })
 })

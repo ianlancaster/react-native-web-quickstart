@@ -6,12 +6,12 @@ import thunk from 'redux-thunk'
 
 import HelloWorldAsyncContainer from './HelloWorldAsync.container'
 import HelloWorldAsyncComponent from './HelloWorldAsync.component'
-// import helloWorldAsyncReducer, { asyncToggleColor } from '../../../Modules/HelloWorldAsync/HelloWorldAsync.modules'
+import helloWorldAsyncReducer, { asyncToggleColor } from '../../../Modules/HelloWorldAsync/HelloWorldAsync.modules'
 
 describe('HELLO WORLD ASYNC TESTS', () => {
   const setup = () => {
     const props = {
-      asyncToggleColor: jest.fn(),
+      asyncToggleColor: jest.fn(asyncToggleColor),
       color: 'red',
       loading: false
     }
@@ -41,7 +41,7 @@ describe('HELLO WORLD ASYNC TESTS', () => {
     }
   }
 
-  describe('Hello World Container', () => {
+  describe('HelloWorldAsync Container', () => {
     const { ContainerWrapper } = setup()
     it('should render the HelloWorldAsync component', () => {
       expect(ContainerWrapper)
@@ -53,12 +53,34 @@ describe('HELLO WORLD ASYNC TESTS', () => {
     })
   })
 
-  describe('Hello World Component', () => {
+  describe('HelloWorldAsync Component', () => {
     const { ComponentWrapper, props } = setup()
     it('should call asyncToggleColor when the text is clicked', () => {
       expect(props.asyncToggleColor.mock.calls.length).toBe(0)
       ComponentWrapper.find({ title: 'helloWorldAsync' }).simulate('click')
       expect(props.asyncToggleColor.mock.calls.length).toBe(1)
+    })
+  })
+
+  describe('HelloWorldAsync Actions', () => {
+    const { mockStore } = setup()
+    it('Should have an asyncToggleColor action creator that is a function', () => {
+      expect(asyncToggleColor).toBeInstanceOf(Function)
+    })
+
+    it('should dispatch', () => {
+      return Promise.resolve(mockStore.dispatch(asyncToggleColor()))
+        .then(() => {
+          return Promise.resolve(mockStore.getActions())
+        })
+        .then((resolved) => {
+          console.log(resolved)
+        })
+    })
+
+    it('should timers', () => {
+      const callBack = jest.fn()
+      asyncToggleColor(callBack)
     })
   })
 })
