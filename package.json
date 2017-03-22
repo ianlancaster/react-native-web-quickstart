@@ -6,6 +6,7 @@
     "start:ios": "react-native run-ios",
     "start:android": "react-native run-android",
     "start:web": "node web/bin/dev-server",
+    "start:server": "node server",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "clean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && npm cache clean",

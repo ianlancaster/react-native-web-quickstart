@@ -53,4 +53,6 @@ if (project.env === 'development') {
   app.use(express.static(project.paths.dist()))
 }
 
+console.log('Development server started at localhost:3000')
+
 module.exports = app
