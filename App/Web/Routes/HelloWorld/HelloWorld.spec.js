@@ -6,12 +6,15 @@ import thunk from 'redux-thunk'
 
 import HelloWorldContainer from './HelloWorld.container'
 import HelloWorldComponent from './HelloWorld.component'
-import helloWorldReducer, { toggleColor } from '../../../Modules/HelloWorld/HelloWorld.modules'
+// import helloWorldReducer, { toggleColor } from '../../../Modules/HelloWorld/HelloWorld.modules'
 
 describe('HELLO WORLD TESTS', () => {
   const setup = () => {
+    const MockFn = jest.fn()
+    const mockToggleColor = new MockFn()
+
     const props = {
-      // toggleColor: sinon.spy(),
+      toggleColor: () => { mockToggleColor() },
       color: 'red'
     }
 
@@ -37,9 +40,15 @@ describe('HELLO WORLD TESTS', () => {
     }
   }
 
-  describe('actions', () => {
-    it('should create an action to add a todo', () => {
-      expect(true).toEqual(true)
+  describe('Hello World Container', () => {
+    const { ContainerWrapper } = setup()
+    it('should render the HelloWorld component', () => {
+      expect(ContainerWrapper)
+    })
+
+    it('should render an h2 with the text "hello world!"', () => {
+      expect(ContainerWrapper.find({ title: 'helloWorld' }).length).toBe(1)
+      expect(ContainerWrapper.find({ title: 'helloWorld' }).text()).toContain('Hello World!')
     })
   })
 })

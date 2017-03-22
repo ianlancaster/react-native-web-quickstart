@@ -11,6 +11,7 @@ class HelloWorld extends Component {
     return (
       <div className={classes.container}>
         <h2
+          title='helloWorld'
           onClick={toggleColor}
           className={classes.text}
           style={{ color }}>
