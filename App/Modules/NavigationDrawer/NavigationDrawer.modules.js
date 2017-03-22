@@ -24,9 +24,7 @@ handleAction('TOGGLE_DRAWER', (state, action) => ({
 // Store Injection
 // ------------------------------------
 
-const initialState = {
-  drawerOpen: false
-}
+const initialState = { drawerOpen: false }
 
 export default function navigationDrawerReducer (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]
