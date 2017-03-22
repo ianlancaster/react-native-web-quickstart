@@ -10,11 +10,8 @@ import HelloWorldComponent from './HelloWorld.component'
 
 describe('HELLO WORLD TESTS', () => {
   const setup = () => {
-    const MockFn = jest.fn()
-    const mockToggleColor = new MockFn()
-
     const props = {
-      toggleColor: () => { mockToggleColor() },
+      toggleColor: jest.fn(),
       color: 'red'
     }
 
@@ -49,6 +46,15 @@ describe('HELLO WORLD TESTS', () => {
     it('should render an h2 with the text "hello world!"', () => {
       expect(ContainerWrapper.find({ title: 'helloWorld' }).length).toBe(1)
       expect(ContainerWrapper.find({ title: 'helloWorld' }).text()).toContain('Hello World!')
+    })
+  })
+
+  describe('Hello World Component', () => {
+    const { ComponentWrapper, props } = setup()
+    it('should call toggleColor when the text is clicked', () => {
+      expect(props.toggleColor.mock.calls.length).toBe(0)
+      ComponentWrapper.find({ title: 'helloWorld' }).simulate('click')
+      expect(props.toggleColor.mock.calls.length).toBe(1)
     })
   })
 })
