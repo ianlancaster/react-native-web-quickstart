@@ -3,7 +3,7 @@ const router = express.Router()
 
 router.get('/api/v1/helloWorldAsync', (req, res) => {
   setTimeout(() => {
-    res.json('Hello!')
+    res.status(200).json('Hello!')
   }, 2000)
 })
 
