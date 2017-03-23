@@ -1,16 +1,20 @@
-import mockResponse from '../../../Utilities/mockResponse'
 import helloWorldAsyncReducer, { asyncToggleColor } from '../HelloWorldAsync.modules'
 import { mockStore, expectedActions } from './HelloWorldAsync.setup'
+import nock from 'nock'
 
 describe('HelloWorldAsync Actions', () => {
+  afterEach(() => {
+    nock.cleanAll()
+  })
+
   it('Should have an asyncToggleColor action creator that is a function', () => {
     expect(asyncToggleColor).toBeInstanceOf(Function)
   })
 
   it('should reduce START_REQUEST and ASYNC_TOGGLE_COLOR actions when asyncToggleColor is dispatched', () => {
-    window.fetch = jest.fn().mockImplementation(() => (
-      Promise.resolve(mockResponse(200, null, 'Hello!')))
-    )
+    nock('http://localhost:3001/')
+      .get('/api/v1/helloWorldAsync')
+      .reply(200, { body: 'Hello!' })
 
     return mockStore.dispatch(asyncToggleColor())
       .then(() => {

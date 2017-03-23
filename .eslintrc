@@ -25,7 +25,8 @@
     "it" : false,
     "pit" : false,
     "expect" : false,
-    "jest": false
+    "jest": false,
+    "afterEach": false
   },
   "rules": {
     "key-spacing"          : 0,
