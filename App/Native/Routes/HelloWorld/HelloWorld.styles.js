@@ -1,8 +1,6 @@
 import { StyleSheet } from 'react-native'
 import { fonts } from '../../Themes'
 
-console.log('fonts', fonts)
-
 export const classes = StyleSheet.create({
   mainView: {
     flexDirection: 'column',
