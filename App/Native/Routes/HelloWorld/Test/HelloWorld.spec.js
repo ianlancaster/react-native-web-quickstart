@@ -1,12 +1,16 @@
 import 'react-native'
-import React from 'react'
+import React from 'react' // eslint-disable-line
 import renderer from 'react-test-renderer'
-import HelloWorld from '../HelloWorld.component'
-import { props } from './HelloWorld.setup'
+import { ComponentWrapper, ContainerWrapper } from './HelloWorld.setup'
 
-it('renders correctly', () => {
-  const tree = renderer.create(
-    <HelloWorld {...props} />
-  ).toJSON()
-  expect(tree).toMatchSnapshot()
+describe('Native Hello World', () => {
+  it('should render the HelloWorld component correctly', () => {
+    const tree = renderer.create(ComponentWrapper()).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('should render the HelloWorld container correctly', () => {
+    const tree = renderer.create(ContainerWrapper()).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
 })

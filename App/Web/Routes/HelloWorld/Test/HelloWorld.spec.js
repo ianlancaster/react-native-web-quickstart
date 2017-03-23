@@ -1,6 +1,6 @@
 import { ContainerWrapper, ComponentWrapper, props } from './HelloWorld.setup'
 
-describe('HELLO WORLD TESTS', () => {
+describe('Web Hello World', () => {
   describe('Hello World Container', () => {
     it('should render the HelloWorld component', () => {
       expect(ContainerWrapper)

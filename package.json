@@ -14,7 +14,7 @@
     "newclear": "rm -rf $TMPDIR/react-* && watchman watch-del-all && rm -rf ios/build/ModuleCache/* && rm -rf node_modules/ && npm cache clean && npm i",
     "test": "npm run test:web && npm run test:modules && npm run test:native",
     "test:web": "jest /App/Web --config App/Web/jest.config.json",
-    "test:native": "./node_modules/jest/bin/jest.js /App/Native --config App/Native/jest.config.json",
+    "test:native": "jest /App/Native --config App/Native/jest.config.json",
     "test:modules": "jest /App/Modules",
     "android:build": "cd android && ./gradlew assembleRelease",
     "android:install": "cd android && ./gradlew assembleRelease && ./gradlew installRelease",
