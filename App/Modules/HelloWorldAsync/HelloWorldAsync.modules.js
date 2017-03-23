@@ -1,3 +1,5 @@
+import fetch from 'isomorphic-fetch'
+
 // ------------------------------------
 // Injection Setup
 // ------------------------------------
@@ -21,11 +23,13 @@ const handleAction = (ACTION_TYPE, stateChanges) => {
 export const asyncToggleColor = () => {
   return dispatch => {
     dispatch({ type : 'START_REQUEST' })
-    return setTimeout((callBack) => {
-      callBack && callBack()
-      return dispatch({ type: 'ASYNC_TOGGLE_COLOR' })
-    }
-    , 2000)
+    return fetch('http://localhost:3001/api/v1/helloWorldAsync')
+      .then(res => res.json())
+      .then(json => {
+        console.log(json)
+        dispatch({ type: 'ASYNC_TOGGLE_COLOR' })
+      })
+      .catch(err => console.log('Error: ', err))
   }
 }
 
