@@ -23,6 +23,7 @@
     "__BASENAME__" : false,
     "describe" : false,
     "it" : false,
+    "pit" : false,
     "expect" : false,
     "jest": false
   },

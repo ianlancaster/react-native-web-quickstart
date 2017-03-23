@@ -25,10 +25,7 @@ export const asyncToggleColor = () => {
     dispatch({ type : 'START_REQUEST' })
     return fetch('http://localhost:3001/api/v1/helloWorldAsync')
       .then(res => res.json())
-      .then(json => {
-        console.log(json)
-        dispatch({ type: 'ASYNC_TOGGLE_COLOR' })
-      })
+      .then(json => dispatch({ type: 'ASYNC_TOGGLE_COLOR' }))
       .catch(err => console.log('Error: ', err))
   }
 }

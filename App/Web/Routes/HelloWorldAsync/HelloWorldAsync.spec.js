@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import { shallow, mount } from 'enzyme'
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
+import mockResponse from '../../../Utilities/mockResponse'
 
 import HelloWorldAsyncContainer from './HelloWorldAsync.container'
 import HelloWorldAsyncComponent from './HelloWorldAsync.component'
@@ -62,25 +63,48 @@ describe('HELLO WORLD ASYNC TESTS', () => {
     })
   })
 
+  const expectedActions = {
+    startRequest: { type: 'START_REQUEST' },
+    asyncToggleColor: { type: 'ASYNC_TOGGLE_COLOR' }
+  }
+
   describe('HelloWorldAsync Actions', () => {
     const { mockStore } = setup()
     it('Should have an asyncToggleColor action creator that is a function', () => {
       expect(asyncToggleColor).toBeInstanceOf(Function)
     })
 
-    it('should dispatch', () => {
-      return Promise.resolve(mockStore.dispatch(asyncToggleColor()))
+    it('Does an async test', () => {
+      window.fetch = jest.fn().mockImplementation(() => (
+        Promise.resolve(mockResponse(200, null, '{"id":"1234"}')))
+      )
+
+      return mockStore.dispatch(asyncToggleColor())
         .then(() => {
-          return Promise.resolve(mockStore.getActions())
-        })
-        .then((resolved) => {
-          console.log(resolved)
+          const recoredActions = mockStore.getActions()
+          expect(recoredActions[0]).toEqual(expectedActions.startRequest)
+          expect(recoredActions[1]).toEqual(expectedActions.asyncToggleColor)
         })
     })
+  })
 
-    it('should timers', () => {
-      const callBack = jest.fn()
-      asyncToggleColor(callBack)
+  describe('HelloWorldAsync Reducer', () => {
+    it('should return the correct initial state', () => {
+      const initialState = {
+        color: 'red',
+        loading: false
+      }
+
+      expect(helloWorldAsyncReducer(undefined, {})).toEqual(initialState)
+    })
+
+    it('should toggle the color state if TOGGLE_COLOR is dispatched', () => {
+      const expectedState = {
+        color: 'blue',
+        loading: false
+      }
+
+      expect(helloWorldAsyncReducer(undefined, expectedActions.asyncToggleColor)).toEqual(expectedState)
     })
   })
 })
