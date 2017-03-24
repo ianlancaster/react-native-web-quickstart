@@ -1,6 +1,13 @@
 {
-  "name": "igniteProject",
+  "name": "ReactNativeWebQuickstart",
   "version": "0.0.1",
+  "description": "A hello world starter that deploys to web, ios, and android. Using react, react native, and redux this starter shares as much of the codebase as possible.",
+  "author": "Ian Lancaster <ianclancaster@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianlancaster/react-native-web-quickstart.git"
+  },
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start:ios": "react-native run-ios",
@@ -31,6 +38,7 @@
     "babel-loader": "^6.4.1",
     "babel-polyfill": "^6.23.0",
     "babel-register": "^6.24.0",
+    "better-npm-run": "0.0.15",
     "connect-history-api-fallback": "^1.3.0",
     "cssnano": "^3.10.0",
     "express": "^4.15.2",
