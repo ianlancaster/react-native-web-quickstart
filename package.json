@@ -14,12 +14,15 @@
     "start:android": "react-native run-android",
     "start:web": "node web/bin/dev-server",
     "start:server": "node server",
-    "lint": "eslint .",
+    "compile:web": "better-npm-run compile:web",
+    "deploy:web": "better-npm-run deploy:web",
+    "lint": "eslint ./App",
     "lint:fix": "eslint --fix",
     "clean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && npm cache clean",
+    "clean:web": "rimraf web/dist",
     "clean:android": "cd android/ && ./gradlew clean && cd .. && react-native run-android",
     "newclear": "rm -rf $TMPDIR/react-* && watchman watch-del-all && rm -rf ios/build/ModuleCache/* && rm -rf node_modules/ && npm cache clean && npm i",
-    "test": "npm run test:web && npm run test:modules && npm run test:utils && npm run test:native && npm run test:server",
+    "test": "npm run test:web; npm run test:modules; npm run test:utils; npm run test:native; npm run test:server",
     "test:web": "jest /App/Web --config App/Web/Test/jest.config.json",
     "test:native": "jest /App/Native --config App/Native/jest.config.json",
     "test:modules": "jest /App/Modules",
@@ -33,6 +36,21 @@
     "android:shake": "$ANDROID_HOME/platform-tools/adb devices | grep '\\t' | awk '{print $1}' | sed 's/\\s//g' | xargs -I {} $ANDROID_HOME/platform-tools/adb -s {} shell input keyevent 82",
     "flow": "flow --show-all-errors"
   },
+  "betterScripts": {
+    "compile:web": {
+      "command": "node web/bin/compile",
+      "env": {
+        "DEBUG": "app:*"
+      }
+    },
+    "deploy:web": {
+      "command": "npm run lint && npm run test && npm run clean:web && npm run compile:web",
+      "env": {
+        "DEBUG": "app:*",
+        "NODE_ENV": "production"
+      }
+    }
+  },
   "dependencies": {
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
@@ -42,7 +60,7 @@
     "connect-history-api-fallback": "^1.3.0",
     "cssnano": "^3.10.0",
     "express": "^4.15.2",
-    "extract-text-webpack-plugin": "^2.1.0",
+    "extract-text-webpack-plugin": "^1.0.0",
     "flow-bin": "^0.33.0",
     "history": "^3.3.0",
     "html-webpack-plugin": "^2.28.0",
