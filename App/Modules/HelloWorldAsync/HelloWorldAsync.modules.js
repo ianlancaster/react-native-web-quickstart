@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch'
+import fetch from '../../Utilities/isomorphic-fetch'
 import { handleAction, createReducer } from '../../Utilities/handleAction'
 
 export const asyncToggleColor = () => {
