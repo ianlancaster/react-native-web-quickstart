@@ -35,6 +35,7 @@ This repository includes many helpful features including:
 * Redux dev tools integration and logger
 * Prebuilt navigation drawer
 * react-native-router-flux for native and react plain route for web
+* Modular SASS architecture
 
 ## Caveats
 There are a number of open issues I still need to work on. If you run into a problem with the repository that is not already documented please add an issue. Pull requests welcome!
