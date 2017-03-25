@@ -18,6 +18,8 @@ exports[`Native Hello World Async should render the HelloWorldAsync component co
     style={
       Array [
         Object {
+          "fontFamily": "HelveticaNeue",
+          "fontSize": 20,
           "textAlign": "center",
         },
         Object {
@@ -49,6 +51,8 @@ exports[`Native Hello World Async should render the HelloWorldAsync container co
     style={
       Array [
         Object {
+          "fontFamily": "HelveticaNeue",
+          "fontSize": 20,
           "textAlign": "center",
         },
         Object {

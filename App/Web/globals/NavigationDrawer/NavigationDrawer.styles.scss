@@ -4,10 +4,18 @@
     right: 0;
     height: 100%;
     width: 80%;
+    background-color: black;
     transition: .5s ease-in-out;
+    padding: 0 20px 0 20px;
 
     a {
       display: block;
-      font-size: 20px;
+      text-decoration: none;
+
+      h2 {
+        color: white;
+      }
     }
 }
+
+.logo {}

@@ -36,8 +36,8 @@ class DrawerContent extends Component {
     return (
       <ScrollView style={styles.container}>
         <Image source={images.logo} style={styles.logo} />
-        <DrawerButton text='helloWorld' onPress={this.routeHelloWorld} />
-        <DrawerButton text='HelloWorldAsync' onPress={this.routeHelloWorldAsync} />
+        <DrawerButton text='Hello World' onPress={this.routeHelloWorld} />
+        <DrawerButton text='Hello World Async' onPress={this.routeHelloWorldAsync} />
       </ScrollView>
     )
   }

@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import classes from './NavigationDrawer.styles.scss'
+import logo from '../../../Assets/Images/ir.png'
 
 class NavigationDrawer extends Component {
   constructor () {
@@ -16,16 +17,18 @@ class NavigationDrawer extends Component {
         className={classes.drawer}
         style={toggleStyle}>
 
+        <img src={logo} style={classes.logo} />
+
         <Link
           to='hello-world'
           onClick={toggleDrawer}>
-          Hello World
+          <h2>Hello World</h2>
         </Link>
 
         <Link
           to='hello-world-async'
           onClick={toggleDrawer}>
-          Hello World | Async
+          <h2>Hello World Async</h2>
         </Link>
       </div>
     )
