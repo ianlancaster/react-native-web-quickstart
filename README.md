@@ -1,64 +1,40 @@
-#  igniteProject
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
+# React Native Web Quickstart
 
-* Standard compliant React Native App Utilizing [Ignite](https://github.com/infinitered/ignite)
+This repository serves as a simple hello world example and starter kit for those that would like to develop a codebase that deploys to web, Android, and ios while reusing a significant portion of the codebase. Note, that this repository does not use libraries that compile react native components to web like react-web or react-native-web. It does, however, share the react native view layer for Android and ios entirely, and shares all Redux modules between web and native.
 
-## :arrow_up: How to Setup
+This starter is meant to support a mobile first design approach. I recommend mirroring the mobile web version with your native, then removing the iphone preview container from the web view to develop the desktop version.
 
-**Step 1:** git clone this repo:
+The web version (left) pulled heavily from @davezuko's [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit). The react native setup is based on V1 Infinite Red's [ignite starter kit](https://github.com/infinitered/ignite).
 
-**Step 2:** cd to the cloned repo:
+![web version](https://media.giphy.com/media/3ohze3CYn17FvlSnK0/giphy.gif)
+![native version](https://media.giphy.com/media/3og0IUziJhTeNEKYJW/giphy.gif)
 
-**Step 3:** Install the Application with `npm install`
+## Getting Started
 
+To start using the app:
 
-## :arrow_forward: How to Run App
+#### Clone this repo
+`git clone https://github.com/ianlancaster/react-native-web-quickstart.git`
 
-1. cd to the repo
-2. Run Build for either OS
-  * for iOS
-    * run `react-native run-ios`
-  * for Android
-    * Run Genymotion
-    * run `react-native run-android`
+#### Install the dependancies
+`npm i`
 
-## :no_entry_sign: Standard Compliant
+#### Start the server (for the async example)
+`npm run start:server`
 
-[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
-This project adheres to Standard.  Our CI enforces this, so we suggest you enable linting to keep your project compliant during development.
+#### Start a view layer
+`npm run start:web` or `npm run start:ios` or `npm run start:android`
 
-**To Lint on Commit**
+## Features
 
-This is implemented using [ghooks](https://github.com/gtramontina/ghooks). There is no additional setup needed.
+This repository includes many helpful features including:
+* A comprehensive testing suite (react native too!)
+* JS standard code style
+* Linting and testing pre-commit hooks
+* My own killer abstraction of Redux
+* Redux dev tools integration and logger
+* Prebuilt navigation drawer
+* react-native-router-flux for native and react plain route for web
 
-**Bypass Lint**
-
-If you have to bypass lint for a special commit that you will come back and clean (pushing something to a branch etc.) then you can bypass git hooks with adding `--no-verify` to your commit command.
-
-**Understanding Linting Errors**
-
-The linting rules are from JS Standard and React-Standard.  [Regular JS errors can be found with descriptions here](http://eslint.org/docs/rules/), while [React errors and descriptions can be found here](https://github.com/yannickcr/eslint-plugin-react).
-
-## :closed_lock_with_key: Secrets
-
-This project uses [react-native-config](https://github.com/luggit/react-native-config) to expose config variables to your javascript code in React Native. You can store API keys
-and other sensitive information in a `.env` file:
-
-```
-API_URL=https://myapi.com
-GOOGLE_MAPS_API_KEY=abcdefgh
-```
-
-and access them from React Native like so:
-
-```
-import Secrets from 'react-native-config'
-
-Secrets.API_URL  // 'https://myapi.com'
-Secrets.GOOGLE_MAPS_API_KEY  // 'abcdefgh'
-```
-
-The `.env` file is ignored by git keeping those secrets out of your repo.
-
-## :open_file_folder: Related Articles
-Ignite Documentation - [Ignite Wiki https://github.com/infinitered/ignite/wiki](https://github.com/infinitered/ignite/wiki)
+## Caveats
+There are a number of open issues I still need to work on. If you run into a problem with the repository that is not already documented please add an issue. Pull requests welcome!
