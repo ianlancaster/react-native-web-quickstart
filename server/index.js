@@ -9,8 +9,10 @@ app.use(function (req, res, next) {
 
 app.use(require('./routes/helloWorldAsync'))
 
-app.listen(process.env.PORT || 3001, () => {
-  console.log('express server listening on port 3001')
-})
+if (!module.parent) {
+  app.listen(process.env.PORT || 3001, () => {
+    console.log('express server listening on port 3001')
+  })
+}
 
 module.exports = app
