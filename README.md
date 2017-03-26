@@ -7,7 +7,8 @@ This starter is meant to support a mobile first design approach. I recommend mir
 The web version (left) pulled heavily from @davezuko's [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit). The react native setup is based on V1 Infinite Red's [ignite starter kit](https://github.com/infinitered/ignite).
 
 ![web version](https://media.giphy.com/media/3ohze3CYn17FvlSnK0/giphy.gif)
-![native version](https://media.giphy.com/media/3og0IUziJhTeNEKYJW/giphy.gif)
+![ios version](https://media.giphy.com/media/3og0IUziJhTeNEKYJW/giphy.gif)
+![android version](https://media.giphy.com/media/xUPGcGqiCIbHnOiN5m/giphy.gif)
 
 ## Getting Started
 
@@ -25,6 +26,10 @@ To start using the app:
 #### Start a view layer
 `npm run start:web` or `npm run start:ios` or `npm run start:android`
 
+###### Note for Android:
+
+Make sure you closely follow the android section of the [getting started guide](https://facebook.github.io/react-native/docs/getting-started.html) for react native. In addition, the first time you build in Android Studio you should get some warnings saying that the build tool version for a few files is too low. For each of these files click on 'open file' and change buildToolsVersion to "25.0.0". You should then be able to build without issues. Make sure that your emulator is running before you run `npm run start:android`.
+
 ## Features
 
 This repository includes many helpful features including:
@@ -39,3 +44,5 @@ This repository includes many helpful features including:
 
 ## Caveats
 There are a number of open issues I still need to work on. If you run into a problem with the repository that is not already documented please add an issue. Pull requests welcome!
+
+Make sure to use the version of fetch included in the Utilities folder of this repository if you want your requests to work across all platforms!
