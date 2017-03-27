@@ -20,6 +20,18 @@ To start using the app:
 #### Install the dependancies
 `npm i`
 
+#### Input your local ip address into fetch call
+The android emulator has known issues if you try to use localhost in fetch calls. In order to get android fetch calls to work in the emulator you will need to instead use your computers local ip address (i.e. 192.168.0.11). To get the async fetch to work correctly input your computer's local ip.
+
+```
+App/Modules/HelloWorldAsync/HelloWorldAsync.modules.js
+
+// Update this line
+return fetch('http://{ LOCAL IP ADDRESS }:3001/api/v1/helloWorldAsync')
+
+```
+If your are developing the web or ios view localhost will work just fine.
+
 #### Start the server (for the async example)
 `npm run start:server`
 
@@ -33,10 +45,10 @@ Make sure you closely follow the android section of the [getting started guide](
 ## Features
 
 This repository includes many helpful features including:
-* A comprehensive testing suite (react native too!)
+* A comprehensive testing suite
 * JS standard code style
 * Linting and testing pre-commit hooks
-* My own killer abstraction of Redux
+* A nice abstraction of Redux
 * Redux dev tools integration and logger
 * Prebuilt navigation drawer
 * react-native-router-flux for native and react plain route for web
